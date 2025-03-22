@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>register</title>
+
+    <style>
+        input[type=text], input[type=password], input[type=email] {
+
+            padding: 1em;
+            margin: 0.5em 0 2em 0;
+            display: inlin e-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 1em 2em;
+            margin: 0.5em 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+        input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
+            background-color: #d7d2d2bb;
+        }
+        button:hover {
+            opacity:1;
+        }
+        body{
+            background-image: url(https://images.unsplash.com/photo-1548387834-7bf05019e89b?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-repeat: no-repeat;
+            background-attachment:fixed ;
+            background-size: cover;
+        }
+        .form1{
+            width: 50%;
+            margin-left:25%;
+            position: relative;
+            z-index: 1;
+            margin-top:5% ;
+    
+        }
+        .form1::before{
+            content: " ";
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            padding-left: 2%;
+            font-size: 20px;
+            top: 0; 
+            left: 0;
+            opacity: .6; 
+            z-index: -1;
+            background: black;
+            padding-right: 2em;
+        }
+        .nav a{
+            float: right;
+            padding: 1em;
+            text-decoration: none;
+            color:rgb(12, 192, 241);
+            text-size-adjust: 25px;
+            display: block;
+            
+        }
+        .nav a:hover{
+            background-color: rgb(185, 194, 187);
+            background: linear-gradient(#eee, #333);
+        }
+        .nav{
+            position: fixed;
+            top: 0;
+            width: 100%;    
+            display: block;
+        }
+        @keyframes ani{
+            0%{color: #f1f1f1;}
+            25%{color: chartreuse;}
+            50%{color: aqua;}
+            75%{color: black;}
+            100%{color: rgb(84, 84, 236);}
+            
+        }
+        #signup{
+            animation: ani 5s linear  infinite;
+            margin-top: 0.6em;
+        }
+        label{
+            color:#eee
+        }
+    </style>
+</head>
+<body >
+    <div class="nav" >
+        <img src="/static/cu-logo-mob.JPEG" alt="" style="display: inline;">
+        <a href="contact"style="color: #14e3ed;"><b>contact us</b></a>
+        <a href="register"><b>Register</b></a>
+        <a href="login"><b>Login</b></a>
+        <a href="about"><b>About</b></a>
+        <a href="index" ><b>Home</b></a>
+    </div>
+    <div class="form1" style="display: flex;justify-content: center;">
+        <form action="/register" method="POST" style="padding-left: 5%;font-size: 20px;padding-right: 2em;" >
+            {% csrf_token %}
+            <h1 id="signup"><strong> Sign up</strong></h1>
+            <label for="fname"><b>First Name</b></label>
+            <label for="lname" style="margin-left: 30%;"><b>Last Name</b></label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+            <input type="text" id="lname" name="lname" style="margin-left: 1.3em;" placeholder="Enter Last Name" required><br>
+            <label for="mail"><b>Email</b></label><br>
+            <input type="email" id="mail" name="mail" style="width: 70%;" placeholder="example@gmail.com" required><br>
+            <label for="psw"><b>Password</b></label><br>
+            <input type="password" id="psw" name="psw" style="width: 70%;" placeholder="Password" required><br>
+            <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:1em"> Remember me
+            </label>
+            <button type="submit"  >Sign Up</button>
+            
+        </form>
+    </div>
+    <script>
+        if({{value}} == 0 ){
+            alert("invalid email address")
+        }else if({{value}}==1){
+            alert("email alreay exists")
+        }
+
+    </script>
+</body>
+</html>

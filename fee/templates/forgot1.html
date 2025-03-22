@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        input[type=text]{
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        body{
+            background-image: url(static/background.jpg);
+            background-repeat: no-repeat;
+            background-attachment:fixed ;
+            background-size: cover;
+        }
+        label{
+            color: #f1f1f1;
+        }
+        .forgot::before{
+            content: " ";
+            position: absolute;
+            width: 420px;
+            height: 300px;
+            padding-left: 10%;
+            top: 0; 
+            left: -10px;
+            opacity: 0.7; 
+            z-index: -1;
+            background-image: url(static/background.jpg);
+            outline: solid;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="nav" style="background-color: transparent;">
+        <img src="static/cu-logo-mob.JPEG" alt="" style="display: inline;">
+        <a href="register"><b>Register</b></a>
+        <a href="login"><b>Login</b></a>
+        <a href="about"><b>About</b></a>
+        <a href="index" ><b>Home</b></a>
+    </div>
+    <div class="forgot" style="margin-top:100px ;">
+        <form action="login.html" style="font-size: 25px;">
+            <label for="psw"><b>Enter new password</b></label><br>
+            <input type="text" name="psw"><br>
+            <label for="rpsw"><b>Renter password</b></label><br>
+            <input type="text" name="rpsw"><br>
+            <button id="loginbtn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

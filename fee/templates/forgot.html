@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reset password</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+        body{
+            background-image: url(static/background.jpg);
+            background-repeat: no-repeat;
+            background-attachment:fixed ;
+            background-size: cover;
+        }
+        
+        .form1::before{
+            content: " ";
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            padding-left: 10%;
+            top: 0; 
+            left: -10px;
+            opacity: 0.7; 
+            z-index: -1;
+            background-image: url(static/background.jpg);
+            outline: solid;
+
+        }
+        button:hover{
+            background-color:mediumturquoise;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav" style="background-color: transparent;">
+        <img src="static/cu-logo-mob.JPEG" alt="" style="display: inline;">
+        <a href="register"><b>Register</b></a>
+        <a href="login"><b>Login</b></a>
+        <a href="about"><b>About</b></a>
+        <a href="index" ><b>Home</b></a>
+    </div>
+    <div class="form1" style="font-size: 20px; margin-top: 100px;" >
+        <h1>Reset Password</h1>
+        <form action="forgot" method="post">
+            {% csrf_token %}
+            <label for="mail"  ><B>Username</B></label><br>
+            <input type="email" name="mail"><br>
+            <label for="otp"><b>OTP</b></label><br>
+            <input type="text" name="otp"><br>
+            <center><button style="width: 90px;font-size: 20px;cursor: pointer;border-radius: 30px;">Submit</button></center>
+        </form>
+    </div>
+    <script>
+        if ({{value}} ==1){
+        alert("user not found")}
+    </script>s
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }</script>
+    <style>
+        body{
+            background-image: url("https://images.unsplash.com/photo-1698706382117-6ee2a5547aee?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" );
+            background-repeat: no-repeat;
+            background-size:auto;
+            box-sizing: border-box;
+
+        }
+        .contact{
+            display: flex;
+            height: 26em;
+            width: 40em;
+            justify-content: center;
+            flex-direction:row;
+            margin-top: 4em;
+            margin-left: auto;
+            margin-right: auto;
+            background-image: url(https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        .contact input {
+
+            height: 2em;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid black;
+            margin: 0.5em;
+            padding: 0.5em;
+        }
+        .contact textarea{
+            border-radius: 2em;
+            border: 1px solid black;
+            background-color: transparent;
+            padding: 1em;
+        }
+        .contact button{
+            border-radius: 2em;
+            width: 80%;
+            height: 3em;
+            background-color:rgb(45, 224, 224);
+            opacity: 0.7;
+            cursor: pointer;
+            
+            
+        }
+        ::placeholder{
+            color:black;
+            
+        }
+        .contact button:hover{
+            opacity: 1;
+        }
+        .contact h1{
+            color: rgb(52, 47, 6);
+            font-size: 3em;
+
+        }.contact form{
+            margin-top:2em ;
+        }
+        .contact input,textarea{
+            opacity: 0.7;
+        }
+        .contact input:hover,textarea:hover{
+            opacity: 0.8;
+        }
+        .contact input:focus,textarea:focus{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Log In</a>
+        <a href="/register">Register</a>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <span style="font-size:30px;cursor:pointer;color: white;"  onclick="openNav()">&#9776; MENU</span>
+        <img src="/static/cu_logo.jpeg" alt="" style="float: right;width: 10%; ">
+        
+    </div>
+    
+    <div class="contact" >
+        <div style="margin-right:1em ;">
+            <h1>CONTACT US</h1>
+        </div>
+        <div>
+            <form name="form1" action="contact" method="post">
+                {%csrf_token%}
+                <input type="text" placeholder="Name" name="name" required><br>
+                <input type="email" name="email" required  placeholder="Email"><br>
+                <textarea name="desc" id="" cols="30" rows="10" placeholder="    enter your text here" name="desc"></textarea><br>
+                <center><button type="submit" >Send message</button></center>
+            </form>
+        </div>
+    </div>
+    <script>
+        if ({{value}} == 1 ) {
+            alert("Your Response Submitted Successfully")
+        }else if({{value}} == 0 ){
+            alert("invalid email address")
+        }
+
+    </script>
+
+</body>
+</html>

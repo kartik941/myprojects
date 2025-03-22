@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="icon" href="https://fontawesome.com/icons/user?f=classic&s=regular">
+    <style>
+        body{
+            background-image: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+        form{
+            font-size: 30px;
+        }
+        input[type=text], input[type=password], input[type=email] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f7f3f3;
+        }
+        a{
+            text-decoration: none;
+            color: aqua;
+            
+        }
+        a:hover{
+            color: aliceblue;
+        }
+        label{
+            color: aliceblue;
+        }
+        .form1{
+            width: 500px;
+            margin-left:30%;
+            position: relative;
+            z-index: 1;
+    
+        }
+        .form1::before{
+            content: " ";
+            position: absolute;
+            width: 370px;
+            height: 440px;
+            padding-left: 10%;
+            top: 0; 
+            left: 0;
+            opacity: 0.5; 
+            z-index: -1;
+            background-color: black;
+            outline: solid;
+
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="nav"  style="background-color: transparent;">
+        <img src="static/cu_logo.jpeg" alt="" style="display: inline;width: 15%;">
+        <a href="contact"style="color: #14e3ed;"><b>contact us</b></a>
+        <a href="register"style="color: #14e3ed;"><b>Register</b></a>
+        <a href="login" style="color: #14e3ed;"><b>Login</b></a>
+        <a href="about" style="color: #14e3ed;"><b>About</b></a>
+        <a href="index" style="color: #14e3ed;" ><b>Home</b></a>
+    </div>
+    <div class="form1">
+        <form action="" style=" width: 370px;height: 450px;padding-left: 10%;margin-top: 80px" method="post">
+            {% csrf_token %}
+            <p style="margin-left:110px ;padding-top: 10px;color: aliceblue;"><b><em>LOGIN</em></b></p>
+            <label for="uname"><b>User Name</b></label><br>
+            <input type="email" placeholder="abc@gmail.com" id="uname" name="email" style="width: 300px;height: 40px;" required ><br>
+            <label for="psw" ><b>Password</b></label><br>
+            <input type="password" id="psw" name="psw"  style="width: 300px;height: 40px;" placeholder="Password" required >
+            <button id="loginbtn"><b>Submit</b></button><br>
+            <a href="register.html" style="font-size: 15px;float: left;margin-top: 5%; display: inline;">create new account</a>
+            <a href="forgot" style="font-size: 15px;float: right;margin-right: 5%;margin-top: 5%;">forgot password</a>
+        </form>
+        <script>
+            if ({{value}} ==1){
+            alert("wrong username or password")}
+        </script>
+
+        
+        
+    </div>
+
+
+    
+</body>
+</html>

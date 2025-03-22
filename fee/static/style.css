@@ -1,0 +1,130 @@
+.form1{
+    width: 500px;
+    margin-left:30%;
+    margin-top: 40px;
+    position: relative;
+}
+
+#loginbtn{
+    width: 90px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 30%;
+    cursor: pointer;
+    border-radius: 30px;
+}
+#loginbtn:hover{
+    background-color:mediumturquoise;
+}
+.nav a{
+    float: right;
+    padding: 15px;
+    text-decoration: none;
+    color:crimson;
+    text-size-adjust: 25px;
+    display: block;
+    
+}
+.nav a:hover{
+    background-color: rgb(185, 194, 187);
+    background: linear-gradient(#eee, #333);
+}
+.nav{
+            
+    background-color: rgb(246, 245, 245,0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    filter: saturate(10);
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+
+.flex{
+    display: flex;
+}
+.flex60{
+    flex: 60;
+}
+.flex40{
+    flex: 30;
+    flex-direction: column;
+}
+.flex2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 98%;
+    margin-left: 10px;
+
+}
+.flex3{
+    flex: 10%;
+    display: grid;
+
+}
+.forgot{
+    width: 400px;
+    margin-left:30%;
+    margin-top: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.cur{
+    display: block;
+}
+.ilogin:hover{
+    background-color: rgb(185, 194, 187);
+    background: linear-gradient(#eee, #333);
+}
+.ilogin a{
+    padding: 15px;
+    text-decoration: none;
+    color:crimson;
+    text-size-adjust: 25px;
+    display: block;
+}
+.lis ul{
+    list-style-type: none;
+    font-size: 1em;
+}
+.lis a{
+    text-decoration: none;
+}
+.lis a:link{
+    color: white;
+}
